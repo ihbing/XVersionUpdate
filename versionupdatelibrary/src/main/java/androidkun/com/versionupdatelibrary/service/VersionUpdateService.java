@@ -190,7 +190,7 @@ public class VersionUpdateService extends Service {
      * 关闭通知
      */
     private void cancleNotification() {
-       if(notificationManager==null) notificationManager.cancel(notificationId);
+       if(notificationManager!=null) notificationManager.cancel(notificationId);
     }
 
 
