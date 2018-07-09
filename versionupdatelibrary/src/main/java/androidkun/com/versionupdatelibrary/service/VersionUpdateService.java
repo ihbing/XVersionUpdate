@@ -319,7 +319,7 @@ public class VersionUpdateService extends Service {
         }
         Intent install = new Intent(Intent.ACTION_VIEW);
         // 调用系统自带安装环境
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N&&this.getApplicationInfo().targetSdkVersion>23) {
             install.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             Uri contentUri = FileProvider.getUriForFile(this, getPackageName()+".fileprovider", file);
             install.setDataAndType(contentUri, "application/vnd.android.package-archive");
